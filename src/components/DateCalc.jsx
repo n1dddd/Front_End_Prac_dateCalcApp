@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import "./DateCalc.scss"
 
 export const DateCalc = () => {
 
@@ -14,35 +15,39 @@ export const DateCalc = () => {
     },
   });
   return (
-    <div className='container'>
-      <form className="formInputs" onSubmit={formik.handleSubmit}>
-        <label htmlFor='date'>Day</label>
-        <input className='inputLabel'
-          id='date'
-          name='date'
-          type='text'
-          onChange={formik.handleChange}
-          value={formik.values.date}
-        />
-
-        <label htmlFor='month'>Month</label>
-        <input 
-          id='month'
-          name='month'
-          type='text'
-          onChange={formik.handleChange}
-          value={formik.values.month}      
-        />
-
-        <label htmlFor='year'>Year</label>
-        <input 
-          id='year'
-          name='year'
-          type='text'
-          onChange={formik.handleChange}
-          value={formik.values.year}
-        />
-      </form>
+    <div className='calcContainer'>
+        <form className="formInputs" onSubmit={formik.handleSubmit}>
+          <div className="dateInput">
+          <label htmlFor='date'>Day</label>
+            <input className='dateInputBox'
+              id='date'
+              name='date'
+              type='text'
+              onChange={formik.handleChange}
+              value={formik.values.date}
+            />
+          </div>
+          <div className="monthInput">
+            <label htmlFor='month'>Month</label>
+            <input className="monthInputBox" 
+              id='month'
+              name='month'
+              type='text'
+              onChange={formik.handleChange}
+              value={formik.values.month}      
+            />
+          </div>
+          <div className="yearInput">
+            <label htmlFor='year'>Year</label>
+            <input className="yearInputBox"
+              id='year'
+              name='year'
+              type='text'
+              onChange={formik.handleChange}
+              value={formik.values.year}
+            />
+          </div>
+        </form>
     </div>
   )
 }
