@@ -1,0 +1,36 @@
+ .formInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding-top: 60px;
+    .dateInput {
+        flex-direction: column;
+        width: 30px;
+    }
+    .monthInput {
+        flex-direction: column;
+        width: 30px;
+    }
+    .yearInput {
+        flex-direction: column;
+        width: 30px;
+    }
+    .dateInputBox {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+    .monthInputBox {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+    .yearInputBox {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+}
+
+/* Remember to try and modulize some of this stuff, add the __prefix for various elements/styles*/
