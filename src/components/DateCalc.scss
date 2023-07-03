@@ -1,36 +1,63 @@
- .formInputs {
+ @import "../styles/variables.scss";
+ 
+ .form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    margin: 0 auto;
-    padding-top: 60px;
-    .dateInput {
+    width: 80%;
+    height: 100px;
+    margin-top: 40px;
+    .inputBoxes {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    .input {
+        display:flex;
         flex-direction: column;
-        width: 30px;
+        width: 155px;
     }
-    .monthInput {
-        flex-direction: column;
-        width: 30px;
-    }
-    .yearInput {
-        flex-direction: column;
-        width: 30px;
-    }
-    .dateInputBox {
-        width: 80px;
-        height: 80px;
+    .inputBox {
+        display: flex;
+        width: 130px;
+        height: 60px;
         border-radius: 10px;
+        border-width: thin;
+        opacity: 59%;
+        margin-top: 10px;
+        font-size: 30px;
+        padding-left: 20px;
+        font-weight: 700;
     }
-    .monthInputBox {
-        width: 80px;
-        height: 80px;
-        border-radius: 10px;
+    .label {
+        font-weight: 700;
+        opacity: 60%;
+        letter-spacing: 3px;
     }
-    .yearInputBox {
-        width: 80px;
-        height: 80px;
-        border-radius: 10px;
+    .fieldError{
+        margin-top: 5px;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 14px;
+        color: red;
+        .inputBox{
+            border-color: solid red;
+        }
     }
 }
+.dividerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    margin-left: 62px;
+    .horizontalLine {
+        display: flex;
+        width: 100%;
+    }
+}
+
+
+
 
 /* Remember to try and modulize some of this stuff, add the __prefix for various elements/styles*/
