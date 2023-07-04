@@ -1,63 +1,161 @@
  @import "../styles/variables.scss";
  
- .form {
+ .calcContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 80%;
-    height: 100px;
-    margin-top: 40px;
-    .inputBoxes {
+    align-items: center;
+    background-color: var(--color-white);
+    width: 900px;
+    height: 600px;
+    border-radius: 30px;
+    border-bottom-right-radius: 150px;
+    .submitContainer {
         display: flex;
-        justify-content: space-evenly;
         flex-direction: row;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        .horizontalLine {
+            display: flex;
+            background-color: var(--color-smokey-grey);
+            width: 100%;
+            outline: 0;
+        }
+        .submitArrow {
+            outline: none;
+            border: none;
+            width: 110px;
+            height: 100px;
+            background-color: var(--color-purple);
+            border-radius: 50%;
+            img {
+                width: 60%;
+            }
+        }
     }
-    .input {
+}
+ .form {
+    width: 60%;
+    margin-top: 40px;
+    margin-right: 181px;
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .inputContainer {
         display:flex;
         flex-direction: column;
         width: 155px;
     }
     .inputBox {
         display: flex;
-        width: 130px;
         height: 60px;
         border-radius: 10px;
-        border-width: thin;
-        opacity: 59%;
         margin-top: 10px;
         font-size: 30px;
         padding-left: 20px;
         font-weight: 700;
+        outline: solid thin var(--color-light-grey);
+        border: 2px;
     }
     .label {
+        display:flex;
         font-weight: 700;
-        opacity: 60%;
+        font-size: 20px;
+        color: var(--color-smokey-grey);
         letter-spacing: 3px;
     }
     .fieldError{
+        display:flex;
         margin-top: 5px;
         font-weight: 400;
         font-style: italic;
         font-size: 14px;
-        color: red;
-        .inputBox{
-            border-color: solid red;
+        color: var(--color-light-red);
+    }
+}
+
+
+
+@media only screen and (max-width: 900px){
+    .calcContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-off-white);
+        width: 300px;
+        height: 500px;
+        border-radius: 30px;
+        border-bottom-right-radius: 100px;
+        .submitContainer {
+            display: flex;
+            flex-direction: row;
+            margin-top: 45px;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            .horizontalLine {
+                display: flex;
+                width: 100%;
+            }
+            .submitArrow {
+                position: absolute;
+                outline: none;
+                border: none;
+                width: 50px;
+                height: 50px;
+                background-color: var(--color-purple);
+                border-radius: 50%;
+                img {
+                    width: 70%;
+                }
+            }
         }
     }
-}
-.dividerContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 85%;
-    margin-left: 62px;
-    .horizontalLine {
+    .form {
         display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         width: 100%;
+        margin-top: 30px;
+        margin-right: 0px;
+        .headerContainer {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+        .inputContainer {
+            display:flex;
+            flex-direction: column;
+            width: 70px;
+        }
+        .inputBox {
+            display: flex;
+            height: 50px;
+            border-radius: 10px;
+            opacity: 59%;
+            margin-top: 10px;
+            font-size: 15px;
+            padding-left: 10px;
+            font-weight: 700;
+        }
+        .label {
+            display:flex;
+            font-weight: 700;
+            font-size: 9px;
+            opacity: 60%;
+            letter-spacing: 3px;
+        }
+        .fieldError{
+            display:flex;
+            margin-top: 5px;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 9px;
+            color: var(--color-light-red);
+        }
     }
+    
 }
-
-
-
-
-/* Remember to try and modulize some of this stuff, add the __prefix for various elements/styles*/
