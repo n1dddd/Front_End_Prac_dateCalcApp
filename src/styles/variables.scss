@@ -1,1 +1,25 @@
 $font-family: "Montserrat", sans-serif;
+:root {
+    // Primary Colors 
+  --color-purple: hsl(259, 100%, 65%);
+  --color-light-red: hsl(0, 100%, 67%);
+  
+  // Neutral Colors
+  --color-white: hsl(0, 0%, 100%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+  
+  // Fonts 
+  
+  /* Poppins regular (400) */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-weight-poppins-regular: 400;
+  
+  /* Poppins semibold (700) */
+  --font-weight-poppins-semibold: 700;
+  
+  /* Poppins extrabold (800) */
+  --font-weight-poppins-extrabold: 800;
+  }
