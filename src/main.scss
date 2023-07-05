@@ -2,8 +2,7 @@
 @import "styles/variables.scss";
 @import "styles/typography.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Ubuntu:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -11,7 +10,7 @@
 }
 
 body {
-    font-family: $font-family;
+    font-family: var(--font-poppins);
     min-height: 100vh;
     display: flex;
     justify-content: center;
