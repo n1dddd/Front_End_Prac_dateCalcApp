@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import enterArrow from "../../public/icon-arrow.svg"
+import enterArrow from "../icon-arrow.svg"
 import "./DateCalc.scss"
 
 export const DateCalc = () => {
+
+  const [state, setState] = useState({
+    calculateDay: "--",
+    calculateMonth: "--",
+    calculateYear: "--"
+  })
 
   const formik = useFormik({
     initialValues: {
@@ -26,8 +33,16 @@ export const DateCalc = () => {
         .required("This field is required"),
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-      console.log(values);
+      const day = values.date;
+      const month = values.month;
+      const year = values.year;
+
+      setState((prev) => ({
+        ...prev,
+        calculateDay: day,
+        calculateMonth: month,
+        calculateYear: year
+      }))
     },
   });
   return (
@@ -83,6 +98,11 @@ export const DateCalc = () => {
         <button type="submit" onClick={formik.handleSubmit} className="submitArrow" >
           <img src={enterArrow} alt="submitArrow" />
         </button>
+      </div>
+      <div className="calculatedDate">
+        <p><span>{state.calculateYear}</span> years</p>
+        <p><span>{state.calculateMonth}</span> months</p>
+        <p><span>{state.calculateDay}</span> days</p>
       </div>
     </section>
   )
