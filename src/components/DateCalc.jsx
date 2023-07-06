@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
+import { dateCalculator } from '../utils/helpers';
 import * as Yup from 'yup';
 import enterArrow from "../icon-arrow.svg"
 import "./DateCalc.scss"
@@ -33,15 +34,22 @@ export const DateCalc = () => {
         .required("This field is required"),
     }),
     onSubmit: values => {
+
+      //assign values from user input to variables
       const day = values.date;
-      const month = values.month;
+      const month = values.month - 1; //-1 as date is calculated with December as 0
       const year = values.year;
 
-      setState((prev) => ({
+      const today = new Date(); //set variable to todays date
+      const past = new Date(year, month, day); //set variable to date of input
+
+      const dateCalcObj = dateCalculator(today, past) //set variable to return of helper function
+
+      setState((prev) => ({ //set state of dynamic variables to be dispalyed as the calculated elapsed time
         ...prev,
-        calculateDay: day,
-        calculateMonth: month,
-        calculateYear: year
+        calculateDay: dateCalcObj.dayCalc,
+        calculateMonth: dateCalcObj.monthCalc,
+        calculateYear: dateCalcObj.yearsCalc
       }))
     },
   });
