@@ -39,6 +39,8 @@
         flex-direction: column;
         margin-right: 250px;
         p {
+            display: flex;
+            gap: 20px;
             font-style: italic;  
             font-size: 80px;
             letter-spacing: 5px;
