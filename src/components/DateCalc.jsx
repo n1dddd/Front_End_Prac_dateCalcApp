@@ -1,11 +1,22 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { dateCalculator } from '../utils/helpers';
+import { useSpring, animated } from "react-spring";
 import * as Yup from 'yup';
 import enterArrow from "../icon-arrow.svg"
 import "./DateCalc.scss"
 
 export const DateCalc = () => {
+
+  function Number({ n }) {
+    const { number } = useSpring({
+      from: { number: 0},
+      number: n,
+      delay: 100,
+      config: { mass: 2, tension: 10, friction: 20 },
+    });
+    return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
+  }
 
   const [state, setState] = useState({
     calculateDay: "--",
@@ -108,9 +119,9 @@ export const DateCalc = () => {
         </button>
       </div>
       <div className="calculatedDate">
-        <p><span>{state.calculateYear}</span> years</p>
-        <p><span>{state.calculateMonth}</span> months</p>
-        <p><span>{state.calculateDay}</span> days</p>
+        <p><span>{state.calculateYear > 0 ? <Number n={state.calculateYear}></Number> : state.calculateYear}</span> years</p>
+        <p><span>{state.calculateMonth > 0 ? <Number n={state.calculateMonth}></Number> : state.calculateMonth}</span> months</p>
+        <p><span>{state.calculateDay > 0 ? <Number n={state.calculateDay}></Number> : state.calculateDay}</span> days</p>
       </div>
     </section>
   )
