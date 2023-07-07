@@ -19,6 +19,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-spring": "^9.7.2",
     "style-loader": "^3.3.3",
     "yup": "^1.2.0"
   },
